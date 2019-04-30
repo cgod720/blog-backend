@@ -22,7 +22,13 @@ router.get('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Entry.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedEntry) => {
     res.json(updatedEntry);
-  })
-})
+  });
+});
+
+router.delete('/:id', (req, res) => {
+  Entry.findByIdAndDelete(req.params.id, (err, deletedEntry) => {
+    res.json(deletedEntry);
+  });
+});
 
 module.exports = router;
