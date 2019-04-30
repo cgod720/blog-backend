@@ -18,4 +18,11 @@ router.get('/', (req, res) => {
   });
 });
 
+//Update Route
+router.put('/:id', (req, res) => {
+  Entry.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedEntry) => {
+    res.json(updatedEntry);
+  })
+})
+
 module.exports = router;
