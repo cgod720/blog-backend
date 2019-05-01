@@ -16,7 +16,7 @@ const entrySchema = new mongoose.Schema({
     default: Date.now()
   },
   meta: {
-    vote: {
+    votes: {
       type: Number,
       default: 0
     },
