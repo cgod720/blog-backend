@@ -16,8 +16,14 @@ const entrySchema = new mongoose.Schema({
     default: Date.now()
   },
   meta: {
-    vote: Number,
-    favs: Number
+    vote: {
+      type: Number,
+      default: 0
+    },
+    favs: {
+      type: Number,
+      default: 0
+    }
   }
 });
 
